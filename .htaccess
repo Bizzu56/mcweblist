@@ -1,0 +1,14 @@
+### Accès Interdit
+
+Options -Indexes
+
+RewriteEngine On
+
+# Interdire l'acces aux dossiers :
+RewriteRule ^(src) - [R=403,L]
+
+# Bloquer l'accès aux fichiers .env, composer.json, composer.lock
+<FilesMatch "(\.env.sample|\.env|composer\.json|composer\.lock|package.json|package-lock.json|stylesCompiler.js)">
+  Order allow,deny
+  Deny from all
+</FilesMatch>

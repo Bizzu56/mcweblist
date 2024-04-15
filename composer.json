@@ -1,0 +1,17 @@
+{
+    "name": "bizu/weblistmc",
+    "autoload": {
+        "psr-4": {
+            "Bizu\\Weblistmc\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "nordiste",
+            "email": "antonin-loistron_student2022@wilder.school"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
+    }
+}

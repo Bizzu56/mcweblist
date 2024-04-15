@@ -1,0 +1,1109 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  min-width: 0;
+  font: inherit;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  color: black;
+  list-style: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+video,
+svg {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: #212f3d;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+:root {
+  width: 100%;
+  min-height: 100dvh;
+}
+
+a {
+  color: white;
+}
+a :visited {
+  color: white;
+}
+
+/*      NAVBAR      */
+.nav-container {
+  min-height: 5vh;
+  max-height: 5vh;
+}
+.nav-container .bar-navigation {
+  position: fixed;
+  background-color: rgba(33, 47, 61, 0.8117647059);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6509803922);
+  width: 100%;
+  min-height: 80px;
+  max-height: 9.5vh;
+  top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  padding: 0 20px 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 4;
+}
+.nav-container .bar-navigation .login-header-button {
+  display: none;
+}
+@media (min-width: 992px) {
+  .nav-container .bar-navigation {
+    min-height: 70px;
+    max-height: 9.5vh;
+  }
+  .nav-container .bar-navigation .login-header-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    border: white 3px solid;
+    border-radius: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 80px;
+  }
+}
+.nav-container .bar-navigation .my-account-nav-icon {
+  display: none;
+}
+@media (min-width: 992px) {
+  .nav-container .bar-navigation .my-account-nav-icon {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  .nav-container .bar-navigation .my-account-nav-icon span {
+    color: white;
+    font-size: 15px;
+  }
+  .nav-container .bar-navigation .my-account-nav-icon i {
+    color: white;
+    cursor: pointer;
+  }
+}
+.nav-container .bar-navigation a {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  z-index: 2;
+}
+.nav-container .bar-navigation a img {
+  width: 100%;
+  height: fit-content;
+}
+@media (min-width: 992px) {
+  .nav-container {
+    justify-content: space-between;
+    padding-left: 0.7rem;
+    padding-right: 1.5rem;
+    width: 75%;
+  }
+}
+
+.navigation {
+  display: none;
+}
+@media (min-width: 992px) {
+  .navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .navigation .nav-links {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 40px;
+  }
+  .navigation .nav-links .nav-link {
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+}
+@media (min-width: 992px) and (min-width: 992px) {
+  .navigation .nav-links .nav-link {
+    font-size: 13px;
+  }
+}
+@media (min-width: 992px) {
+  .navigation .nav-links .nav-link.login-page,
+  .navigation .nav-links .nav-link.register-page,
+  .navigation .nav-links .nav-link.account-page {
+    display: none;
+  }
+}
+
+.navigation.open {
+  top: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100dvh;
+  background: #212f3d;
+}
+.navigation.open .nav-links {
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.navigation.open .nav-links .nav-link {
+  min-height: 35px;
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/*      LOGIN AND REGISTER AND UPDATE SETTINGS FORM     */
+.login-form-section,
+.register-form-section,
+.create-server-form-section {
+  min-height: 100dvh;
+  max-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-form-section .login-form-container,
+.login-form-section .register-form-container,
+.login-form-section .create-server-form-container,
+.register-form-section .login-form-container,
+.register-form-section .register-form-container,
+.register-form-section .create-server-form-container,
+.create-server-form-section .login-form-container,
+.create-server-form-section .register-form-container,
+.create-server-form-section .create-server-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+}
+.login-form-section .login-form-container .title-form-login,
+.login-form-section .login-form-container .title-form-register,
+.login-form-section .login-form-container .title-form-create-server,
+.login-form-section .register-form-container .title-form-login,
+.login-form-section .register-form-container .title-form-register,
+.login-form-section .register-form-container .title-form-create-server,
+.login-form-section .create-server-form-container .title-form-login,
+.login-form-section .create-server-form-container .title-form-register,
+.login-form-section .create-server-form-container .title-form-create-server,
+.register-form-section .login-form-container .title-form-login,
+.register-form-section .login-form-container .title-form-register,
+.register-form-section .login-form-container .title-form-create-server,
+.register-form-section .register-form-container .title-form-login,
+.register-form-section .register-form-container .title-form-register,
+.register-form-section .register-form-container .title-form-create-server,
+.register-form-section .create-server-form-container .title-form-login,
+.register-form-section .create-server-form-container .title-form-register,
+.register-form-section .create-server-form-container .title-form-create-server,
+.create-server-form-section .login-form-container .title-form-login,
+.create-server-form-section .login-form-container .title-form-register,
+.create-server-form-section .login-form-container .title-form-create-server,
+.create-server-form-section .register-form-container .title-form-login,
+.create-server-form-section .register-form-container .title-form-register,
+.create-server-form-section .register-form-container .title-form-create-server,
+.create-server-form-section .create-server-form-container .title-form-login,
+.create-server-form-section .create-server-form-container .title-form-register,
+.create-server-form-section .create-server-form-container .title-form-create-server {
+  color: white;
+  font-size: 26px;
+}
+.login-form-section .login-form-container form,
+.login-form-section .register-form-container form,
+.login-form-section .create-server-form-container form,
+.register-form-section .login-form-container form,
+.register-form-section .register-form-container form,
+.register-form-section .create-server-form-container form,
+.create-server-form-section .login-form-container form,
+.create-server-form-section .register-form-container form,
+.create-server-form-section .create-server-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+}
+.login-form-section .login-form-container form .form-input-container,
+.login-form-section .register-form-container form .form-input-container,
+.login-form-section .create-server-form-container form .form-input-container,
+.register-form-section .login-form-container form .form-input-container,
+.register-form-section .register-form-container form .form-input-container,
+.register-form-section .create-server-form-container form .form-input-container,
+.create-server-form-section .login-form-container form .form-input-container,
+.create-server-form-section .register-form-container form .form-input-container,
+.create-server-form-section .create-server-form-container form .form-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+}
+.login-form-section .login-form-container form .form-input-container .input-style,
+.login-form-section .register-form-container form .form-input-container .input-style,
+.login-form-section .create-server-form-container form .form-input-container .input-style,
+.register-form-section .login-form-container form .form-input-container .input-style,
+.register-form-section .register-form-container form .form-input-container .input-style,
+.register-form-section .create-server-form-container form .form-input-container .input-style,
+.create-server-form-section .login-form-container form .form-input-container .input-style,
+.create-server-form-section .register-form-container form .form-input-container .input-style,
+.create-server-form-section .create-server-form-container form .form-input-container .input-style {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #555;
+  outline: none;
+  min-width: 250px;
+  max-width: 250px;
+}
+.login-form-section .login-form-container form .form-input-container .input-style:focus,
+.login-form-section .register-form-container form .form-input-container .input-style:focus,
+.login-form-section .create-server-form-container form .form-input-container .input-style:focus,
+.register-form-section .login-form-container form .form-input-container .input-style:focus,
+.register-form-section .register-form-container form .form-input-container .input-style:focus,
+.register-form-section .create-server-form-container form .form-input-container .input-style:focus,
+.create-server-form-section .login-form-container form .form-input-container .input-style:focus,
+.create-server-form-section .register-form-container form .form-input-container .input-style:focus,
+.create-server-form-section .create-server-form-container form .form-input-container .input-style:focus {
+  border-color: #00ff26;
+  box-shadow: 0 0 0 0.2rem rgba(0, 255, 47, 0.25);
+}
+
+/*      BURGER      */
+.hamburger {
+  height: 50px;
+  width: 50px;
+  transform: 0.2s;
+  position: relative;
+  z-index: 2;
+}
+.hamburger .line {
+  transition: 0.5s;
+  stroke-width: 6px;
+  stroke: black;
+}
+.hamburger .lineTop {
+  stroke-dasharray: 40 40;
+  stroke-dashoffset: 25;
+}
+.hamburger .lineBottom {
+  stroke-dasharray: 40 40;
+  stroke-dashoffset: 60;
+}
+.hamburger .lineMid {
+  stroke-dasharray: 40 40;
+}
+@media (min-width: 992px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+.hamburger .checkbox {
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.hamburger .checkbox:checked + svg .line {
+  stroke: crimson;
+}
+
+.hamburger .checkbox:checked + svg .lineTop {
+  stroke-dashoffset: 0;
+  transform-origin: left;
+  transform: rotateZ(45deg) translate(-7px, -5px);
+}
+
+.hamburger .checkbox:checked + svg .lineMid {
+  stroke-dashoffset: 40;
+}
+
+.hamburger .checkbox:checked + svg .lineBottom {
+  stroke-dashoffset: 0;
+  transform-origin: left;
+  transform: rotateZ(-45deg) translate(-5px, 5px);
+}
+
+/*      ACCOUNT PAGE      */
+.section-accounts-manager {
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 70px;
+}
+.section-accounts-manager h1 {
+  font-size: 40px;
+  font-weight: 600;
+  color: white;
+}
+.section-accounts-manager .cards-account-container {
+  min-height: 100dvh;
+  max-height: 110dvh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 7vh;
+}
+@media (min-width: 992px) {
+  .section-accounts-manager .cards-account-container {
+    padding-top: 0;
+    gap: 15px;
+    margin-bottom: 0;
+  }
+}
+.section-accounts-manager .cards-account-container .card {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 2px solid white;
+  transition: all 0.3s ease;
+}
+@media (min-width: 992px) {
+  .section-accounts-manager .cards-account-container .card {
+    width: 250px; /* Ajustez la taille selon vos besoins */
+    height: 250px;
+  }
+}
+.section-accounts-manager .cards-account-container .card:hover .card-overlay {
+  opacity: 1;
+}
+.section-accounts-manager .cards-account-container .card .card-img {
+  width: 80%; /* Taille de l'image plus petite que la carte */
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  transition: filter 0.3s ease;
+}
+.section-accounts-manager .cards-account-container .card .card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Couleur de l'arrière-plan du texte */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.section-accounts-manager .cards-account-container .card .card-text {
+  color: white; /* Couleur du texte */
+  font-size: 18px; /* Taille du texte */
+  text-align: center;
+  padding: 10px;
+}
+
+/*      SERVER.PHP      */
+.server-public-data-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+  margin-top: 80px;
+}
+.server-public-data-section .server-public-data-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.server-public-data-section .server-public-data-container .server-public-data-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.server-public-data-section .server-public-data-container .server-public-data-header .server-public-data-title {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  color: rgb(0, 222, 4);
+}
+.server-public-data-section .server-public-data-container .server-public-data-header .server-public-data-small-title {
+  font-size: 16px;
+  color: #e0e0e0;
+  font-size: 18px;
+}
+.server-public-data-section .server-public-data-container .server-public-data-body {
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  /*       SERVER.PHP SEARCH SERVER DATA     */
+}
+.server-public-data-section .server-public-data-container .server-public-data-body .server-data-with-search-container {
+  width: 95%;
+  border: 1px white solid;
+  height: auto;
+  border-radius: 25px;
+  padding: 10px;
+}
+.server-public-data-section .server-public-data-container .server-public-data-body .server-data-with-search-container .server-status-infos-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.server-public-data-section .server-public-data-container .server-public-data-body .server-data-with-search-container .server-status-infos-header img {
+  max-width: 100px;
+  max-height: 100px;
+}
+.server-public-data-section .server-public-data-container .server-public-data-body .server-data-with-search-container .server-status-infos-header h1 {
+  font-size: 28px;
+  color: white;
+}
+.server-public-data-section .server-public-data-container .server-public-data-body .server-data-with-search-container .server-status-infos-body .server-status-infos-players,
+.server-public-data-section .server-public-data-container .server-public-data-body .server-data-with-search-container .server-status-infos-body .server-status-infos-version,
+.server-public-data-section .server-public-data-container .server-public-data-body .server-data-with-search-container .server-status-infos-body .server-status-infos-online {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.server-public-data-section .server-public-data-container .server-public-data-body .server-data-with-search-container .server-status-infos-body .server-status-infos-players h2,
+.server-public-data-section .server-public-data-container .server-public-data-body .server-data-with-search-container .server-status-infos-body .server-status-infos-version h2,
+.server-public-data-section .server-public-data-container .server-public-data-body .server-data-with-search-container .server-status-infos-body .server-status-infos-online h2 {
+  color: white;
+}
+.server-public-data-section .server-public-data-container .server-public-data-body .server-data-with-search-container .server-status-infos-body .server-status-infos-players span,
+.server-public-data-section .server-public-data-container .server-public-data-body .server-data-with-search-container .server-status-infos-body .server-status-infos-version span,
+.server-public-data-section .server-public-data-container .server-public-data-body .server-data-with-search-container .server-status-infos-body .server-status-infos-online span {
+  color: #00ff26;
+  text-align: center;
+}
+.server-public-data-section .server-public-data-container .server-public-data-body .server-data-with-search-container .server-status-infos-body .server-status-infos-motd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.server-public-data-section .server-public-data-container .server-public-data-body .server-data-with-search-container .server-status-infos-body .server-status-infos-motd h2 {
+  color: white;
+}
+.server-public-data-section .server-public-data-container .server-public-data-body .server-data-with-search-container .server-status-infos-body .server-status-infos-motd .server-status-infos-motd-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.server-public-data-section .server-public-data-container .server-public-data-body .server-data-with-search-container .server-status-infos-body .server-status-infos-motd .server-status-infos-motd-view span {
+  font-size: 15px;
+}
+.server-public-data-section .server-public-data-container .server-public-data-body .server-public-data-form .server-public-data-form-search-and-submit {
+  display: flex;
+  margin-bottom: 20px;
+}
+.server-public-data-section .server-public-data-container .server-public-data-body .server-public-data-form .server-public-data-form-search-and-submit input[type=text] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+.server-public-data-section .server-public-data-container .server-public-data-body .server-public-data-form .server-public-data-form-search-and-submit input[type=submit] {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+.server-public-data-section .server-public-data-container .server-public-data-body .server-public-data-form .server-public-data-form-search-and-submit input[type=submit]:hover {
+  background-color: #0056b3;
+}
+.server-public-data-section .server-public-data-container .server-public-data-body .server-public-data-form .server-public-data-form-bedrock-check label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: white;
+}
+.server-public-data-section .server-public-data-container .server-public-data-body .server-public-data-form .server-public-data-form-bedrock-check label input[type=checkbox] {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+/*      HOME PAGE     */
+.home-section-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+}
+.home-section-container .random-server-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+}
+.home-section-container .random-server-container .random-server-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home-section-container .random-server-container .random-server-header img {
+  width: 150px;
+  height: 150px;
+}
+.home-section-container .random-server-container .random-server-header h1 {
+  font-size: 38px;
+  color: white;
+  text-align: center;
+}
+.home-section-container .random-server-container .random-server-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home-section-container .random-server-container .random-server-body .random-server-body-ip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home-section-container .random-server-container .random-server-body .random-server-body-ip h2 {
+  font-size: 28px;
+  color: white;
+}
+.home-section-container .random-server-container .random-server-body .random-server-body-player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.home-section-container .random-server-container .random-server-body .random-server-body-player h2 {
+  font-size: 18px;
+  color: white;
+}
+.home-section-container .random-server-container .random-server-body .random-server-body-player span {
+  color: #00ff26;
+}
+
+/*      SERVER LIST PAGE      */
+.server-private-list-section .nav-server-create {
+  width: 100%;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: black 1.5px solid;
+}
+
+.server-list-section,
+.server-private-list-section,
+.server-admin-list-section {
+  min-height: 100dvh;
+  width: 100%;
+  padding-top: 9.5vh;
+}
+@media (min-width: 992px) {
+  .server-list-section,
+  .server-private-list-section,
+  .server-admin-list-section {
+    padding-top: 8vh;
+  }
+}
+.server-list-section .server-list-container,
+.server-list-section .server-private-list-container,
+.server-list-section .server-admin-list-container,
+.server-private-list-section .server-list-container,
+.server-private-list-section .server-private-list-container,
+.server-private-list-section .server-admin-list-container,
+.server-admin-list-section .server-list-container,
+.server-admin-list-section .server-private-list-container,
+.server-admin-list-section .server-admin-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+.server-list-section .server-list-container .server-card,
+.server-list-section .server-private-list-container .server-card,
+.server-list-section .server-admin-list-container .server-card,
+.server-private-list-section .server-list-container .server-card,
+.server-private-list-section .server-private-list-container .server-card,
+.server-private-list-section .server-admin-list-container .server-card,
+.server-admin-list-section .server-list-container .server-card,
+.server-admin-list-section .server-private-list-container .server-card,
+.server-admin-list-section .server-admin-list-container .server-card {
+  width: 80%;
+  max-width: 250px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.server-list-section .server-list-container .server-card .server-card-header,
+.server-list-section .server-private-list-container .server-card .server-card-header,
+.server-list-section .server-admin-list-container .server-card .server-card-header,
+.server-private-list-section .server-list-container .server-card .server-card-header,
+.server-private-list-section .server-private-list-container .server-card .server-card-header,
+.server-private-list-section .server-admin-list-container .server-card .server-card-header,
+.server-admin-list-section .server-list-container .server-card .server-card-header,
+.server-admin-list-section .server-private-list-container .server-card .server-card-header,
+.server-admin-list-section .server-admin-list-container .server-card .server-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.server-list-section .server-list-container .server-card .server-card-header img,
+.server-list-section .server-private-list-container .server-card .server-card-header img,
+.server-list-section .server-admin-list-container .server-card .server-card-header img,
+.server-private-list-section .server-list-container .server-card .server-card-header img,
+.server-private-list-section .server-private-list-container .server-card .server-card-header img,
+.server-private-list-section .server-admin-list-container .server-card .server-card-header img,
+.server-admin-list-section .server-list-container .server-card .server-card-header img,
+.server-admin-list-section .server-private-list-container .server-card .server-card-header img,
+.server-admin-list-section .server-admin-list-container .server-card .server-card-header img {
+  width: 70%;
+  height: auto;
+  padding: 10px;
+}
+.server-list-section .server-list-container .server-card .server-card-body,
+.server-list-section .server-private-list-container .server-card .server-card-body,
+.server-list-section .server-admin-list-container .server-card .server-card-body,
+.server-private-list-section .server-list-container .server-card .server-card-body,
+.server-private-list-section .server-private-list-container .server-card .server-card-body,
+.server-private-list-section .server-admin-list-container .server-card .server-card-body,
+.server-admin-list-section .server-list-container .server-card .server-card-body,
+.server-admin-list-section .server-private-list-container .server-card .server-card-body,
+.server-admin-list-section .server-admin-list-container .server-card .server-card-body {
+  padding: 20px;
+  background-color: #212f3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.server-list-section .server-list-container .server-card .server-card-body-data,
+.server-list-section .server-private-list-container .server-card .server-card-body-data,
+.server-list-section .server-admin-list-container .server-card .server-card-body-data,
+.server-private-list-section .server-list-container .server-card .server-card-body-data,
+.server-private-list-section .server-private-list-container .server-card .server-card-body-data,
+.server-private-list-section .server-admin-list-container .server-card .server-card-body-data,
+.server-admin-list-section .server-list-container .server-card .server-card-body-data,
+.server-admin-list-section .server-private-list-container .server-card .server-card-body-data,
+.server-admin-list-section .server-admin-list-container .server-card .server-card-body-data {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.server-list-section .server-list-container .server-card .server-card-body-data h1,
+.server-list-section .server-private-list-container .server-card .server-card-body-data h1,
+.server-list-section .server-admin-list-container .server-card .server-card-body-data h1,
+.server-private-list-section .server-list-container .server-card .server-card-body-data h1,
+.server-private-list-section .server-private-list-container .server-card .server-card-body-data h1,
+.server-private-list-section .server-admin-list-container .server-card .server-card-body-data h1,
+.server-admin-list-section .server-list-container .server-card .server-card-body-data h1,
+.server-admin-list-section .server-private-list-container .server-card .server-card-body-data h1,
+.server-admin-list-section .server-admin-list-container .server-card .server-card-body-data h1 {
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: red;
+}
+.server-list-section .server-list-container .server-card .server-card-body-data h2,
+.server-list-section .server-private-list-container .server-card .server-card-body-data h2,
+.server-list-section .server-admin-list-container .server-card .server-card-body-data h2,
+.server-private-list-section .server-list-container .server-card .server-card-body-data h2,
+.server-private-list-section .server-private-list-container .server-card .server-card-body-data h2,
+.server-private-list-section .server-admin-list-container .server-card .server-card-body-data h2,
+.server-admin-list-section .server-list-container .server-card .server-card-body-data h2,
+.server-admin-list-section .server-private-list-container .server-card .server-card-body-data h2,
+.server-admin-list-section .server-admin-list-container .server-card .server-card-body-data h2 {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 10px;
+}
+.server-list-section .server-list-container .server-card .server-card-body-data .server-card-players,
+.server-list-section .server-private-list-container .server-card .server-card-body-data .server-card-players,
+.server-list-section .server-admin-list-container .server-card .server-card-body-data .server-card-players,
+.server-private-list-section .server-list-container .server-card .server-card-body-data .server-card-players,
+.server-private-list-section .server-private-list-container .server-card .server-card-body-data .server-card-players,
+.server-private-list-section .server-admin-list-container .server-card .server-card-body-data .server-card-players,
+.server-admin-list-section .server-list-container .server-card .server-card-body-data .server-card-players,
+.server-admin-list-section .server-private-list-container .server-card .server-card-body-data .server-card-players,
+.server-admin-list-section .server-admin-list-container .server-card .server-card-body-data .server-card-players {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.server-list-section .server-list-container .server-card .server-card-body-data .server-card-players h2,
+.server-list-section .server-private-list-container .server-card .server-card-body-data .server-card-players h2,
+.server-list-section .server-admin-list-container .server-card .server-card-body-data .server-card-players h2,
+.server-private-list-section .server-list-container .server-card .server-card-body-data .server-card-players h2,
+.server-private-list-section .server-private-list-container .server-card .server-card-body-data .server-card-players h2,
+.server-private-list-section .server-admin-list-container .server-card .server-card-body-data .server-card-players h2,
+.server-admin-list-section .server-list-container .server-card .server-card-body-data .server-card-players h2,
+.server-admin-list-section .server-private-list-container .server-card .server-card-body-data .server-card-players h2,
+.server-admin-list-section .server-admin-list-container .server-card .server-card-body-data .server-card-players h2 {
+  font-size: 16px;
+  color: white;
+  margin-bottom: 5px;
+}
+.server-list-section .server-list-container .server-card .server-card-body-data .server-card-players span,
+.server-list-section .server-private-list-container .server-card .server-card-body-data .server-card-players span,
+.server-list-section .server-admin-list-container .server-card .server-card-body-data .server-card-players span,
+.server-private-list-section .server-list-container .server-card .server-card-body-data .server-card-players span,
+.server-private-list-section .server-private-list-container .server-card .server-card-body-data .server-card-players span,
+.server-private-list-section .server-admin-list-container .server-card .server-card-body-data .server-card-players span,
+.server-admin-list-section .server-list-container .server-card .server-card-body-data .server-card-players span,
+.server-admin-list-section .server-private-list-container .server-card .server-card-body-data .server-card-players span,
+.server-admin-list-section .server-admin-list-container .server-card .server-card-body-data .server-card-players span {
+  font-size: 16px;
+  font-weight: bold;
+  color: #00ff26;
+}
+.server-list-section .server-list-container .server-card .server-card-body-view,
+.server-list-section .server-private-list-container .server-card .server-card-body-view,
+.server-list-section .server-admin-list-container .server-card .server-card-body-view,
+.server-private-list-section .server-list-container .server-card .server-card-body-view,
+.server-private-list-section .server-private-list-container .server-card .server-card-body-view,
+.server-private-list-section .server-admin-list-container .server-card .server-card-body-view,
+.server-admin-list-section .server-list-container .server-card .server-card-body-view,
+.server-admin-list-section .server-private-list-container .server-card .server-card-body-view,
+.server-admin-list-section .server-admin-list-container .server-card .server-card-body-view {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.server-list-section .server-list-container .server-card .server-card-body-view a,
+.server-list-section .server-private-list-container .server-card .server-card-body-view a,
+.server-list-section .server-admin-list-container .server-card .server-card-body-view a,
+.server-private-list-section .server-list-container .server-card .server-card-body-view a,
+.server-private-list-section .server-private-list-container .server-card .server-card-body-view a,
+.server-private-list-section .server-admin-list-container .server-card .server-card-body-view a,
+.server-admin-list-section .server-list-container .server-card .server-card-body-view a,
+.server-admin-list-section .server-private-list-container .server-card .server-card-body-view a,
+.server-admin-list-section .server-admin-list-container .server-card .server-card-body-view a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 7px 15px;
+  transition: background-color 0.3s ease;
+}
+@media (min-width: 992px) {
+  .server-list-section .server-list-container .server-card .server-card-body-view a,
+  .server-list-section .server-private-list-container .server-card .server-card-body-view a,
+  .server-list-section .server-admin-list-container .server-card .server-card-body-view a,
+  .server-private-list-section .server-list-container .server-card .server-card-body-view a,
+  .server-private-list-section .server-private-list-container .server-card .server-card-body-view a,
+  .server-private-list-section .server-admin-list-container .server-card .server-card-body-view a,
+  .server-admin-list-section .server-list-container .server-card .server-card-body-view a,
+  .server-admin-list-section .server-private-list-container .server-card .server-card-body-view a,
+  .server-admin-list-section .server-admin-list-container .server-card .server-card-body-view a {
+    padding: 5px 10px;
+  }
+}
+.server-list-section .server-list-container .server-card .server-card-body-view a:hover,
+.server-list-section .server-private-list-container .server-card .server-card-body-view a:hover,
+.server-list-section .server-admin-list-container .server-card .server-card-body-view a:hover,
+.server-private-list-section .server-list-container .server-card .server-card-body-view a:hover,
+.server-private-list-section .server-private-list-container .server-card .server-card-body-view a:hover,
+.server-private-list-section .server-admin-list-container .server-card .server-card-body-view a:hover,
+.server-admin-list-section .server-list-container .server-card .server-card-body-view a:hover,
+.server-admin-list-section .server-private-list-container .server-card .server-card-body-view a:hover,
+.server-admin-list-section .server-admin-list-container .server-card .server-card-body-view a:hover {
+  background-color: #0056b3;
+}
+@media (min-width: 992px) {
+  .server-list-section .server-list-container .server-card,
+  .server-list-section .server-private-list-container .server-card,
+  .server-list-section .server-admin-list-container .server-card,
+  .server-private-list-section .server-list-container .server-card,
+  .server-private-list-section .server-private-list-container .server-card,
+  .server-private-list-section .server-admin-list-container .server-card,
+  .server-admin-list-section .server-list-container .server-card,
+  .server-admin-list-section .server-private-list-container .server-card,
+  .server-admin-list-section .server-admin-list-container .server-card {
+    max-width: 20%;
+    margin: 20px;
+  }
+}
+
+/*      INDIVIDUAL SERVER PAGE      */
+.server-one-infos-section {
+  width: 100%;
+  min-height: 100dvh;
+  margin-top: 90px;
+  margin-bottom: 50px;
+}
+.server-one-infos-section .server-one-infos-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.server-one-infos-section .server-one-infos-container .server-one-infos-first {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.server-one-infos-section .server-one-infos-container .server-one-infos-first img {
+  max-width: 100px;
+}
+.server-one-infos-section .server-one-infos-container .server-one-infos-first .server-one-infos-first-name,
+.server-one-infos-section .server-one-infos-container .server-one-infos-first .server-one-infos-first-ip,
+.server-one-infos-section .server-one-infos-container .server-one-infos-first .server-one-infos-first-players,
+.server-one-infos-section .server-one-infos-container .server-one-infos-first .server-one-infos-first-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.server-one-infos-section .server-one-infos-container .server-one-infos-first .server-one-infos-first-name h2,
+.server-one-infos-section .server-one-infos-container .server-one-infos-first .server-one-infos-first-ip h2,
+.server-one-infos-section .server-one-infos-container .server-one-infos-first .server-one-infos-first-players h2,
+.server-one-infos-section .server-one-infos-container .server-one-infos-first .server-one-infos-first-status h2 {
+  color: white;
+}
+.server-one-infos-section .server-one-infos-container .server-one-infos-first .server-one-infos-first-name span,
+.server-one-infos-section .server-one-infos-container .server-one-infos-first .server-one-infos-first-ip span,
+.server-one-infos-section .server-one-infos-container .server-one-infos-first .server-one-infos-first-players span,
+.server-one-infos-section .server-one-infos-container .server-one-infos-first .server-one-infos-first-status span {
+  color: rgb(85, 255, 0);
+}
+.server-one-infos-section .server-one-infos-container .server-one-infos-first .server-one-infos-first-name h2 {
+  color: red;
+  font-size: 20px;
+  font-weight: 700;
+}
+.server-one-infos-section .server-one-infos-container .server-one-infos-two {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+  width: 100%;
+}
+.server-one-infos-section .server-one-infos-container .server-one-infos-two .server-one-infos-two-description {
+  text-align: center;
+}
+.server-one-infos-section .server-one-infos-container .server-one-infos-two .server-one-infos-two-description h2 {
+  color: white;
+}
+.server-one-infos-section .server-one-infos-container .server-one-infos-two .server-one-infos-two-description span {
+  color: white;
+}
+.server-one-infos-section .server-one-infos-container .server-one-infos-two .server-one-infos-two-comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.server-one-infos-section .server-one-infos-container .server-one-infos-two .server-one-infos-two-comment h1 {
+  color: white;
+}
+.server-one-infos-section .server-one-infos-container .server-one-infos-two .server-one-infos-two-comment .line-comment {
+  width: 98%;
+  height: 1px;
+  background-color: black;
+  margin-top: 25px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+}
+@media (min-width: 992px) {
+  .server-one-infos-section .server-one-infos-container .server-one-infos-two .server-one-infos-two-comment .line-comment {
+    width: 70%;
+  }
+}
+.server-one-infos-section .server-one-infos-container .server-one-infos-two .server-one-infos-two-comment form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+.server-one-infos-section .server-one-infos-container .server-one-infos-two .server-one-infos-two-comment form .input-style {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #555;
+  outline: none;
+  min-width: 220px;
+  max-width: 250px;
+}
+.server-one-infos-section .server-one-infos-container .server-one-infos-two .server-one-infos-two-comment form .input-style:focus {
+  border-color: #00ff26;
+  box-shadow: 0 0 0 0.2rem rgba(0, 255, 47, 0.25);
+}
+.server-one-infos-section .server-one-infos-container .server-one-infos-two .server-one-infos-two-comment .server-one-infos-two-all-comment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 30%;
+}
+.server-one-infos-section .server-one-infos-container .server-one-infos-two .server-one-infos-two-comment .server-one-infos-two-all-comment .comment-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: #09791a 2px solid;
+  padding: 5px;
+  border-radius: 15px;
+  width: 80%;
+  min-width: 80%;
+  padding-bottom: 20px;
+}
+.server-one-infos-section .server-one-infos-container .server-one-infos-two .server-one-infos-two-comment .server-one-infos-two-all-comment .comment-container h1 {
+  font: 28px;
+  font-weight: 600;
+  color: rgb(255, 145, 0);
+}
+@media (min-width: 702px) {
+  .server-one-infos-section .server-one-infos-container .server-one-infos-two .server-one-infos-two-comment .server-one-infos-two-all-comment .comment-container {
+    max-width: 200px;
+  }
+}
+.server-one-infos-section .server-one-infos-container .server-one-infos-two .server-one-infos-two-comment .server-one-infos-two-all-comment .comment-container span {
+  text-align: center;
+  color: white;
+}
+.server-one-infos-section .server-one-infos-container .server-one-infos-two .server-one-infos-two-comment .server-one-infos-two-all-comment .comment-container a {
+  margin-top: 18px;
+  background-color: red;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+footer {
+  background: #212f3d;
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.6509803922);
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+footer .footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+footer .footer-content h3 {
+  margin: 0.5em 0;
+}
+footer .footer-content p {
+  margin: 0.5em 0;
+  font-size: 0.75em;
+}
+footer .footer-content audio {
+  margin-top: 1em;
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  footer .footer-content h3 {
+    font-size: 1em;
+  }
+  footer .footer-content p {
+    font-size: 0.65em;
+  }
+  footer .footer-content list audio {
+    background: transparent;
+    border: none;
+    max-width: 200px;
+    height: auto;
+    overflow: hidden;
+  }
+  footer .footer-content list audio::-webkit-media-controls-panel {
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: none;
+  }
+  footer .footer-content list audio::-webkit-media-controls-play-button, footer .footer-content list audio::-webkit-media-controls-volume-slider, footer .footer-content list audio::-webkit-media-controls-mute-button, footer .footer-content list audio::-webkit-media-controls-timeline-container, footer .footer-content list audio::-webkit-media-controls-current-time-display, footer .footer-content list audio::-webkit-media-controls-time-remaining-display {
+    color: #999;
+  }
+  footer .footer-content list audio::--webkit-media-controls-enclosure {
+    border-radius: 5px;
+  }
+}
