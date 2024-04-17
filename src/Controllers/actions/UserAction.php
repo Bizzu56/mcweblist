@@ -1,8 +1,8 @@
 <?php
 
-namespace Bizu\Weblistmc\controllers\actions;
+namespace Bizu\Weblistmc\Controllers\actions;
 
-use Bizu\Weblistmc\controllers\UserController;
+use Bizu\Weblistmc\Controllers\UserController;
 use Bizu\Weblistmc\Models\ModelUser;
 
     class UserAction extends UserController
@@ -13,6 +13,11 @@ use Bizu\Weblistmc\Models\ModelUser;
         {
             $passwordsHelpers = new PasswordHelpers();
             $user = new ModelUser();
+
+              
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                return;
+            }
 
             $getUser = $user->ifExistingUser($email);
             
@@ -73,6 +78,16 @@ use Bizu\Weblistmc\Models\ModelUser;
         {
             $passwordsHelpers = new PasswordHelpers();
             $user = new ModelUser();
+
+              
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return;
+        }
+
+        if (strlen($nickName) < 3 || strlen($nickName) > 50 || strlen($password) < 6 || strlen($password) > 255) {
+    
+            return;
+        }
 
             $hashPassword = $passwordsHelpers->hashPassword($password);
 
